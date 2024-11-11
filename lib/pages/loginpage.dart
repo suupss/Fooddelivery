@@ -10,8 +10,9 @@ class Loginpage extends StatefulWidget {
 }
 
 class _LoginpageState extends State<Loginpage> {
-  TextEditingController _emailController = TextEditingController();
-  TextEditingController _passwordController = TextEditingController();
+ final  TextEditingController _emailController = TextEditingController();
+
+ final  TextEditingController _passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -41,11 +42,7 @@ onTap: FocusManager.instance.primaryFocus?.unfocus,
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [Text('Not a member? ', style: TextStyle(color:  Theme.of(context).colorScheme.primary,)), Text('Register Now' ,style: TextStyle(color:  Theme.of(context).colorScheme.inversePrimary, fontSize: 13, fontWeight: FontWeight.bold),)],
-                )
-      
-                
-          
-              ],
+                )],
             ),
           ),
         ),
