@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_order/components/mybuttons.dart';
 import 'package:food_order/components/mytextfield.dart';
+import 'package:food_order/pages/homepage.dart';
 
 class Loginpage extends StatefulWidget {
   const Loginpage({super.key});
@@ -35,7 +36,13 @@ onTap: FocusManager.instance.primaryFocus?.unfocus,
                 const SizedBox(height: 10,),
                 Mytextfield(myController: _passwordController, text: 'Password'),
                 const SizedBox(height: 10,),
-                const Mybuttons(text: 'Sign In',),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context){
+                 return Homepage();
+                    }));
+                  },
+                  child: const Mybuttons(text: 'Sign In',)),
                 const SizedBox(
                   height: 20,
                 ),
