@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:food_order/pages/loginpage.dart';
-import 'package:food_order/themes/light_mode.dart';
+import 'package:food_order/themes/theme_test.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MultiProvider(
+    providers: [ChangeNotifierProvider(create: (_)=> ThemeTest())],
+    child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -15,7 +18,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      theme: lightMode,
+      theme: context.watch<ThemeTest>().themeData,
       home: Loginpage()
     );
   }

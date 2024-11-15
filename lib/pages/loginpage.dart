@@ -36,13 +36,13 @@ onTap: FocusManager.instance.primaryFocus?.unfocus,
                 const SizedBox(height: 10,),
                 Mytextfield(myController: _passwordController, text: 'Password'),
                 const SizedBox(height: 10,),
-                GestureDetector(
-                  onTap: () {
+                Mybuttons(
+                  onPressed: () {
                     Navigator.push(context, MaterialPageRoute(builder: (context){
-                 return Homepage();
+               return Homepage();
                     }));
                   },
-                  child: const Mybuttons(text: 'Sign In',)),
+                  text: 'Sign In',),
                 const SizedBox(
                   height: 20,
                 ),
